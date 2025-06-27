@@ -34,7 +34,6 @@ theme:
      - navigation.instant.preview
 
 plugins:
-  - offline
   - search
 
 extra_css:
