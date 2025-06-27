@@ -1,0 +1,74 @@
+site_name: GM-plugin
+site_url: https://your-site-url.com
+theme:
+  name: material
+  logo: assets/ITASCA-logo-light-removebg-preview.png # Default logo (light mode)
+  
+  palette:
+    # Light mode
+    - scheme: costum
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - toc.integrate
+
+    - content.code.copy
+    - content.action.edit
+    - content.tabs.link
+    - header.autohide
+    - search.suggest
+    - search.share
+    - search.highlight
+    - navigation.instant
+    - navigation.instant.prefetch
+     - navigation.instant.preview
+
+plugins:
+  - offline
+  - search
+
+extra_css:
+  - stylesheets/extra.css  # optional for more control
+
+extra_javascript:
+  - js/custom.js  # optional if you want behavior
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - General notes: general-notes.md
+  - List: list.md
+  - Mesh Generation & Model Setup Functions: mesh-generation.md
+  - Offset Well Log Import: offset-well-log.md
+  - Data Interpolation Functions: data-interpolation.md
+  - Model Initialization Functions: model-initialization-function.md
+  - Inquiry Functions: inquiry-functions.md
+  - Auxiliary Functions: auxiliary-functions.md
+  - FLAC3D to Petrel Export Functions: flac3d-to-petrel-export-functions.md
+  - for-development: development.md
