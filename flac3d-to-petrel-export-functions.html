@@ -1,0 +1,710 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kiarash-beyk.github.io/ITASCA_FLAC3D-_GMplugin_doc/flac3d-to-petrel-export-functions.html">
+      
+      
+        <link rel="prev" href="auxiliary-functions.html">
+      
+      
+        <link rel="next" href="development.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>FLAC3D to Petrel Export Functions - GM-plugin</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="costum" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="GM-plugin" class="md-header__button md-logo" aria-label="GM-plugin" data-md-component="logo">
+      
+  <img src="assets/ITASCA-logo-light-removebg-preview.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GM-plugin
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FLAC3D to Petrel Export Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="costum" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="GM-plugin" class="md-nav__button md-logo" aria-label="GM-plugin" data-md-component="logo">
+      
+  <img src="assets/ITASCA-logo-light-removebg-preview.png" alt="logo">
+
+    </a>
+    GM-plugin
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="list.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mesh-generation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mesh Generation & Model Setup Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="offset-well-log.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offset Well Log Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data-interpolation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Interpolation Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="model-initialization-function.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Initialization Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inquiry-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inquiry Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="auxiliary-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Auxiliary Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="flac3d-to-petrel-export-functions.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    FLAC3D to Petrel Export Functions
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    for-development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>FLAC3D to Petrel Export Functions</h1>
+
+<p>The following functions export FLAC3D model and its attributes to PETREL compatible format. It exports in two 
+formats: </p>
+<blockquote>
+<blockquote>
+<p>• GRDCL: (native Eclipse format) exports Mesh and attributes as one file. The attributes’ name 
+MUST match Petrel existing property names. (This option is currently inactive 03/14/22 AA) </p>
+<p>• GSLIP: Exports two files separately: mesh and attributes. Attributes can have any name – (This 
+is the current functional version 03/14/22) </p>
+</blockquote>
+</blockquote>
+<p><strong><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-.5 0-1 .19-1.41.59l-3.3 3.29 4.71 4.7 4.71-4.7-3.3-3.29C13 2.19 12.5 2 12 2M5.88 7.29l-3.29 3.3c-.79.78-.79 2.04 0 2.82l3.29 3.3 4.7-4.71zm12.24 0L13.42 12l4.7 4.71 3.29-3.3c.79-.78.79-2.04 0-2.82zM12 13.42l-4.71 4.7 3.3 3.29c.78.79 2.04.79 2.82 0l3.3-3.29z"/></svg></span> f3d_export_to_petrel</strong>(x0,y0,z0,export_file_name,att_export_flag,fname_,no_of_attributes): exports a 
+FLAC3D mesh to GSLIP (GRDCL - not active)  format readable by PETREL and ECLIPSE </p>
+<p>Note: </p>
+<blockquote>
+<ul>
+<li>Also exports zone attributes (from zone extras) and lithology (from group slot 'Geology') </li>
+<li>Exports to "FLAC3D/Petrel/" folder </li>
+<li>Only works on a structured hexahedral mesh </li>
+<li>no node to edge connection admissible </li>
+<li>function uses zone extra 1 for index numbers, which can be used for QC in PETREL. Do not save any
+attributes on Zone Extra 1 or it will be overwritten by this function </li>
+<li>An attribute file must be created and stored in “FLAC3D/Petrel/” in “.csv” format prior to a call to this 
+function. The attribute file holds zone extra number in column 1 and the corresponding attribute name 
+in column 2 </li>
+</ul>
+</blockquote>
+<p>Argument:</p>
+<ul>
+<li>1-3. coordinate of the north-west corner of the mesh (upper most z) with respect to mesh local axis </li>
+<li>
+<ol>
+<li>Mesh export file name (User defined) </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>set to "YES" to export attribute files, set to "NO" for grid export only </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>attribute file name stored in “FLAC3D/Petrel/” folder  </li>
+</ol>
+</li>
+<li>
+<ol>
+<li>number of attributes to be read from FLAC3D model and exported to Petrel. Must match 
+“FLAC3D/Petrel/attribute_file.csv” listed number of attributes or it return error and abort execution</li>
+</ol>
+</li>
+</ul>
+<p><strong>APPENDIX 1</strong>: Project Folder Structure and Input File Format</p>
+<p>For each project create a new folder and rename it to FLAC3D. Place a shortcut to the FLAC3D exe file (set to ‘run 
+as administrator’) in the FLAC3D folder and add the following folders: </p>
+<p><img alt="Image title" src="assets/figure1.png" style="float: left; width: 400px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 1: Content of "FLAC3D/" folder</em></p>
+<p>NOTE: </p>
+<blockquote>
+<p>Folder names must be identical to the names shown above (‘3D-GM_Project_AA.prj’ is project name and be changed to any name, 
+usually actual project name) </p>
+</blockquote>
+<p>Below is description of each folder and its contents: </p>
+<p><strong>“FLAC3D/Deviation”</strong>: holds wellbore trajectories. Note the followings:</p>
+<p><strong>I</strong>. Well trajectory name must follow the below format:<br />
+‘well name’_traj.csv (for well name ‘BH-3’ the trajectory name must read “BH-3_traj.csv “) </p>
+<p><img alt="Image title" src="assets/figure2.png" style="float: left; width: 600px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 2: Content of “FLAC3D/Deviation/” folder </em></p>
+<p><strong>II</strong>. The trajectory file must be sored as ‘csv’ and follow the format shown below: </p>
+<p><img alt="Image title" src="assets/figure3.png" style="float: left; width: 150px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px;  color: #4f9ebd;  ">Figure 3: Contents of “FLAC3D/Deviation/BH-name_traj.csv” trajectory files (Note: z is in TVDSS format)  </em></p>
+<p><strong>“FLAC3D/Fault”</strong>: Holds fault geometries in ‘stl’ format (faults can be stored as stl format using Rhino CAD tool). 
+Fault files should be stored as ‘fault name’.stl, as shown below:  </p>
+<p><img alt="Image title" src="assets/figure4.png" style="float: left; width: 400px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 4: contents of “FLAC3D/Fault/” folder </em></p>
+<p><strong>“FLAC3D/Horizon”</strong>: stores two sets of files: 
+I. 
+“FormationTops.csv” which is the main file for model setup. It includes the list of formations and offset 
+wells and formation tops along the wells in TVDSS. This file must be generated for each project and stored 
+in the “Horizon” folder of the FLAC3D project. This file introduces the name of formations and wells to the 
+model and cannot be changed later. Figure below shows the content and format of this file. </p>
+<p><img alt="Image title" src="assets/figure5.png" style="float: left; width: 600px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 5: “FormationTops.csv” file. Formations must be sorted from top to bottom. Missing formation tops must be marked by ‘9999’. </em></p>
+<p>II. 
+Formation horizon files in ‘stl’ format. Horizon file names must follow the formation names listed in the 
+“FormationTops.csv’, or they will not be imported into the model.  </p>
+<p>Figure below shows the content of “FLAC3D/Horizon/” folder </p>
+<p><img alt="Image title" src="assets/figure6.png" style="float: left; width: 500px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 6: Content of “FLAC3D/Horizon/” folder </em></p>
+<p><strong>“FLAC3D/Input”</strong>: holds other input data such as kriging output, which must be stored in this folder for functions 
+to work. It is also recommended to store any other user-inputs in this folder </p>
+<p><img alt="Image title" src="assets/figure7.png" style="float: left; width: 500px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 7: Contents of “FLAC3D/Input/” folder (showing Kriging output files)  </em></p>
+<p><strong>“FLAC3D/Log”</strong>: contains the well logs in ‘csv’ format. File names must follow ‘well name’_Log.csv naming format. 
+For a well named ‘BH-3’ the log file name must read ‘BH-3_Log.csv’. Well names must be identical to those listed 
+in the ‘FormationTops.csv’ file or will not be imported. Figure below shows an example content of “FLAC3D/Log/” 
+folder. </p>
+<p><img alt="Image title" src="assets/figure8.png" style="float: left; width: 300px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 8: Contents of “FLAC3D/Log/” folder.</em></p>
+<p>The logs must be stored in csv format and include all logs for the offset well as shown in figure below:</p>
+<p><img alt="Image title" src="assets/figure9.png" style="float: left; width: 600px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 9: Well log format for import to 3D geomechanical model. Any invalid data must read ‘-9999’. </em></p>
+<p><em>NOTE</em>: all offset well logs must be consistent in terms of data, order, and format. (NOTE: if an offset well missing 
+a certain log, set all data values to ‘-9999’ for that specific log – it should still exist in the log file) </p>
+<p><strong>“FLAC3D/Output/”</strong>: folder to store all model outputs. All plug-in functions export to this folder. It is recommended 
+to use this folder for any user-defined output, too.  </p>
+<p><strong>“FLAC3D/Rhino/”</strong>: Folder to store project Rhino file. The plug-in has no direct call to this folder.  </p>
+<p><strong>“FLAC3D/Script/”</strong>: Folder to store all user scripts (FISH and command) for the project. It is highly recommended 
+to follow more or less a similar order as shown in figure below, for the scripts as it follows workflow steps. </p>
+<p><img alt="Image title" src="assets/figure10.png" style="float: left; width: 300px; margin-right: 20px;" />
+<em style="clear: left; display: block; font-size:12px; color: #4f9ebd; ">Figure 10: Typical contents in “FLAC3D/Script/” folder. It can change as per project requirements  </em></p>
+<p><strong>“FLAC3D/Petrel/”</strong>: Holds the attribute file and export to PETREL files. The attribute file must exist in this folder 
+before a call to export to Petrel function. The attribute file must be stored as a csv file with first column 
+representing FLAC3D zone number and second one the corresponding attribute name, as shown below. No limit 
+on the number of attributes to export. </p>
+<p><img alt="Image title" src="assets/figure11.png" style="float: left; width: 150px; margin-right: 20px;" />
+<em style="clear: left; display: block;font-size:12px; color: #4f9ebd;  ">Figure 11: Example contents of attribute csv file for export to PETREL  </em></p>
+<p>Zone Extras 
+Some functions use zone extra memories for operations. Table below lists all functions writing to FLAC3D zone 
+extras. Changing the contents of zone extras may result in failure of other functions’ operation. Be careful when 
+overwriting the zone extra values. Most of the default zone extra values can be safely overwritten after model 
+initialization step is complete and properties are assigned to corresponding constitutive model parameters (and 
+if not necessary for export to PETREL) </p>
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px;">Function</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Group</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Zone Extra Number</th>
+      <th style="border: 1px solid #ccc; padding: 8px;">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>condition_mesh_for_dataImport</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Mesh Generation & Model Setup Functions</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        1: zone relative dist from formation top<br>
+        2: formation thickness
+      </td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Must remain unchanged until after data population</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>log_assign_zone</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Data Interpolation Functions</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Corresponding to “Log” attribute name</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        Use <em>“fish list contents ‘Logs’”</em> to see extra numbers corresponding to log values<br>
+        (<em>after calling Well_log_import_all</em>)
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>Shmin_SHmax_azimuth</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Auxiliary Functions</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">User defined</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>zone_log_interpolator</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Data Interpolation Functions</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Corresponding to “Log” attribute name</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        Use <em>“fish list contents ‘Logs’”</em> to see extra numbers corresponding to log values<br>
+        (<em>after calling Well_log_import_all</em>)
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>f3d_export_to_petrel</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">FLAC3D to Petrel Export Functions</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><strong>1: zone ijk index</strong></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">Will export to PETREL for QC</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>function to export lithology from zone group 'Geology' - zone groups must exist in 'Geology' slot </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["toc.integrate", "content.code.copy", "content.action.edit", "content.tabs.link", "header.autohide", "search.suggest", "search.share", "search.highlight", "navigation.instant", "navigation.instant.prefetch - navigation.instant.preview"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
