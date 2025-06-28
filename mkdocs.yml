@@ -1,5 +1,4 @@
 site_name: GM-plugin
-site_url: https://your-site-url.com
 theme:
   name: material
   logo: assets/ITASCA-logo-light-removebg-preview.png # Default logo (light mode)
@@ -39,8 +38,7 @@ plugins:
 extra_css:
   - stylesheets/extra.css  # optional for more control
 
-extra_javascript:
-  - js/custom.js  # optional if you want behavior
+
 
 markdown_extensions:
   - attr_list
