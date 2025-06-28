@@ -62,7 +62,7 @@ markdown_extensions:
       alternate_style: true
 
 nav:
-  - General notes: general-notes.md
+  - General notes: index.md
   - List: list.md
   - Mesh Generation & Model Setup Functions: mesh-generation.md
   - Offset Well Log Import: offset-well-log.md
