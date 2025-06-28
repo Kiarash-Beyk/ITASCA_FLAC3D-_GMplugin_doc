@@ -1,11 +1,14 @@
 site_name: GM-plugin
+site_url: https://kiarash-beyk.github.io/ITASCA_FLAC3D-_GMplugin_doc/
+use_directory_urls: false
+
 theme:
   name: material
   logo: assets/ITASCA-logo-light-removebg-preview.png # Default logo (light mode)
   
   palette:
     # Light mode
-    - scheme: costum
+    - scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -35,8 +38,8 @@ theme:
 plugins:
   - search
 
-extra_css:
-  - stylesheets/extra.css  # optional for more control
+# extra_css:
+#   - stylesheets/extra.css  # optional for more control
 
 
 
