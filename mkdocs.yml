@@ -8,7 +8,7 @@ theme:
   
   palette:
     # Light mode
-    - scheme: default
+    - scheme: costum
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -38,8 +38,8 @@ theme:
 plugins:
   - search
 
-# extra_css:
-#   - stylesheets/extra.css  # optional for more control
+extra_css:
+  - stylesheets/extra.css  # optional for more control
 
 
 
